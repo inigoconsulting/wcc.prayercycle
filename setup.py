@@ -28,6 +28,7 @@ setup(name='wcc.prayercycle',
           'setuptools',
           'plone.app.dexterity',
           'plone.namedfile [blobs]',
+          'collective.miscbehaviors',
           # -*- Extra requirements: -*-
       ],
       extras_require={
