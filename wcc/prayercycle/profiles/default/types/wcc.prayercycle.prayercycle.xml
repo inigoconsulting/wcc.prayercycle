@@ -18,14 +18,14 @@
   <property name="schema">wcc.prayercycle.prayercycle.IPrayerCycle</property> 
   <property name="klass">plone.dexterity.content.Item</property>
   <property name="behaviors">
-     <element value="plone.app.content.interfaces.INameFromTitle" />
-     <element value="plone.app.dexterity.behaviors.metadata.IDublinCore"/>
+      <element value="plone.app.content.interfaces.INameFromTitle" />
+      <element value="plone.app.dexterity.behaviors.metadata.IDublinCore"/>
       <element value="collective.dexteritytextindexer.behavior.IDexterityTextIndexer"/>
       <element value="plone.multilingualbehavior.interfaces.IDexterityTranslatable"/>
-     <element value="collective.miscbehaviors.behavior.bodytext.IBodyText"/>
-     <element value="collective.miscbehaviors.behavior.startenddate.IStartEndDate"/>
-     <element value="collective.miscbehaviors.behavior.leadimage.ILeadImage"/>
-     <element value="wcc.common.behavior.location.ILocationTags"/>
+      <element value="collective.miscbehaviors.behavior.bodytext.IBodyText"/>
+      <element value="collective.miscbehaviors.behavior.startenddate.IStartEndDate"/>
+      <element value="collective.miscbehaviors.behavior.leadimage.ILeadImage"/>
+      <element value="wcc.common.behavior.location.ILocationTags"/>
    </property>
 
   <!-- View information -->

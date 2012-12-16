@@ -5,7 +5,7 @@ from zope import schema
 from zope.schema.interfaces import IContextSourceBinder
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 
-from zope.interface import invariant, Invalid
+from zope.interface import invariant, Invalid, Interface
 
 from z3c.form import group, field
 
@@ -42,7 +42,39 @@ class IPrayerCycle(form.Schema, IImageScaleTraversable):
 # prayercycle_templates.
 # Template filenames should be all lower case.
 
+
+class IPrayerCycleProvider(Interface):
+    pass
+
+class PrayerCycleProvider(grok.Adapter):
+    grok.implements(IPrayerCycleProvider)
+    grok.context(IPrayerCycle)
+
+    def __init__(self, context):
+        self.context = context
+
+    def startDate(self):
+        return getattr(self.context, 'startDate', None)
+
+    def endDate(self):
+        return getattr(self.context, 'endDate', None)
+
 class Index(dexterity.DisplayForm):
     grok.context(IPrayerCycle)
     grok.require('zope2.View')
     grok.name('view')
+
+    def provider(self):
+        return IPrayerCycleProvider(self.context)
+
+    def startDate(self):
+        startDate = self.provider().startDate()
+        if startDate is not None:
+            return startDate.strftime('%d %B %Y')
+        return ''
+
+    def endDate(self):
+        endDate = self.provider().endDate()
+        if endDate is not None:
+            return endDate.strftime('%d %B %Y')
+        return ''       
