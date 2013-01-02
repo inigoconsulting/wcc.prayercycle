@@ -1,0 +1,32 @@
+<dl class="portlet portletCurrentPrayerCycle"
+    style="background:#DADDD2;width:250px;float:right"
+    tal:define="obj view/prayercycle"
+    i18n:domain="wcc.prayercycle">
+
+    <dt class="portletHeader">
+        <span class="portletTopLeft"></span>
+        <a tal:attributes="href obj/absolute_url" style="font-weight:bold">
+            Prayer Cycle
+        </a>
+        <span class="portletTopRight"></span>
+    </dt>
+
+    <dd class="portletItem">
+        <div style="margin-bottom:10px">
+           <span tal:content="view/startDate"/> - <span tal:content="view/endDate"/>
+        </div>
+        <div>
+        <img tal:define="scales obj/@@images;"
+            tal:condition="obj/image"
+            tal:replace="structure python:scales.scale('image', scale='mini').tag()"/>
+        </div>
+    </dd>
+
+    <dd class="portletFooter" style="text-align:right">
+        <span class="portletBottomLeft"></span>
+        <a tal:attributes="href obj/absolute_url"><i>&raquo; View the prayers</i></a>
+        <span class="portletBottomRight"></span>
+    </dd>
+
+</dl>
+<div class="visualClear"></div>

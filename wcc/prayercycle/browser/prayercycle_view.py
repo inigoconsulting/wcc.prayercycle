@@ -21,4 +21,3 @@ class Index(dexterity.DisplayForm):
         if endDate is not None:
             return endDate.strftime('%d %B %Y')
         return ''
-

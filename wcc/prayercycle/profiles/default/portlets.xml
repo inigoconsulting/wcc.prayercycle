@@ -2,5 +2,10 @@
 <portlets>
 
     <!-- -*- extra stuff goes here -*- -->
+ <portlet 
+   addview="wcc.prayercycle.portlet.CurrentPrayerCycle"
+   title="Current Prayer Cycle"
+   description=""/>
+
 
 </portlets>
