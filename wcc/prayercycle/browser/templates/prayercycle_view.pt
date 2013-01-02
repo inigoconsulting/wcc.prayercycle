@@ -10,17 +10,16 @@
 <metal:main fill-slot="content-core">
   <metal:content-core define-macro="content-core">
 
-        <h3 id="prayercycle-date">
-            <tal:block 
-                replace="view/startDate"/>
-                - 
-                <tal:block replace="view/endDate"/>
-            </h3>
+      <h3 id="prayercycle-date">
+          <tal:block 
+              replace="view/startDate"/>
+          -
+          <tal:block replace="view/endDate"/>
+      </h3>
 
-            <div id="prayercycle-bodytext" 
-                tal:content="structure view/w/IBodyText.text/render">
-            </div>
-
+      <div id="prayercycle-bodytext" 
+          tal:content="structure view/w/IBodyText.text/render">
+      </div>
 
   </metal:content-core>
 </metal:main>

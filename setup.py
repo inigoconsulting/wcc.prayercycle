@@ -5,9 +5,9 @@ version = '1.0'
 
 setup(name='wcc.prayercycle',
       version=version,
-      description="WCC Prayer Cycle",
+      description="",
       long_description=open("README.rst").read() + "\n" +
-                       open(os.path.join("docs", "HISTORY.txt")).read(),
+                       open(os.path.join("docs", "HISTORY.rst")).read(),
       # Get more strings from
       # http://pypi.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
@@ -18,7 +18,7 @@ setup(name='wcc.prayercycle',
       keywords='',
       author='Inigo Consulting',
       author_email='team@inigo-tech.com',
-      url='https://github.com/inigoconsulting/wcc.prayercycle',
+      url='http://github.com/inigoconsulting/',
       license='gpl',
       packages=find_packages(),
       namespace_packages=['wcc'],
@@ -28,6 +28,7 @@ setup(name='wcc.prayercycle',
           'setuptools',
           'plone.app.dexterity',
           'plone.namedfile [blobs]',
+          'collective.grok',
           'collective.miscbehaviors',
           # -*- Extra requirements: -*-
       ],

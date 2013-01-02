@@ -1,5 +1,4 @@
-.. contents::
+README for wcc.prayercycle
+==========================================
 
-Introduction
-============
-
+This product contains traces of nuts
