@@ -1,5 +1,5 @@
 <dl class="portlet portletCurrentPrayerCycle"
-    style="background:#DADDD2;width:250px;float:right"
+    style="background:#DADDD2;width:200px"
     tal:define="obj view/prayercycle"
     i18n:domain="wcc.prayercycle">
 
@@ -13,12 +13,12 @@
 
     <dd class="portletItem">
         <div style="margin-bottom:10px">
-           <span tal:content="view/startDate"/> - <span tal:content="view/endDate"/>
+            <h3><span tal:content="view/startDate"/> - <span tal:content="view/endDate"/></h3>
         </div>
         <div>
         <img tal:define="scales obj/@@images;"
             tal:condition="obj/image"
-            tal:replace="structure python:scales.scale('image', scale='mini').tag()"/>
+            tal:replace="structure python:scales.scale('image', width=175, height=175).tag()"/>
         </div>
     </dd>
 
