@@ -11,27 +11,24 @@ from plone.app.portlets.cache import render_cachekey
 from Acquisition import aq_inner
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from wcc.prayercycle import MessageFactory as _
-from Acquisition import aq_inner
-from collective.contentleadimage.config import IMAGE_FIELD_NAME
+from DateTime import DateTime 
 
-from DateTime import DateTime
-
-class ICurrentPrayerCycle(IPortletDataProvider):
+class IUpcomingPrayerCycle(IPortletDataProvider):
     """
     Define your portlet schema here
     """
     pass
 
 class Assignment(base.Assignment):
-    implements(ICurrentPrayerCycle)
+    implements(IUpcomingPrayerCycle)
 
     @property
     def title(self):
-        return _('Current Prayer Cycle')
+        return _('Upcoming Prayer Cycle')
 
 class Renderer(base.Renderer):
     
-    render = ViewPageTemplateFile('templates/currentprayercycle.pt')
+    render = ViewPageTemplateFile('templates/upcomingprayercycle.pt')
 
     @property
     def available(self):
@@ -42,15 +39,24 @@ class Renderer(base.Renderer):
         today = DateTime()
         brains = self.context.portal_catalog(start={
             'query': [today],
-            'range': 'max'
-        }, end={
-            'query': [today],
             'range': 'min'
-        }, 
-        portal_type='wcc.prayercycle.prayercycle')
-        
+        },
+        portal_type='wcc.prayercycle.prayercycle',
+        sort_on='start', sort_order='ascending')
+
         if brains:
-            return brains[0].getObject()
+            prayercycle = brains[0].getObject()
+            if (prayercycle.startDate.year,
+                prayercycle.startDate.month,
+                prayercycle.startDate.day) != (
+                today.year(),
+                today.month(),
+                today.day()):
+                    return prayercycle
+            else:
+                if len(brains) >= 2:
+                    return brains[2].getObject()
+                
         return None
 
     def startDate(self):
@@ -69,9 +75,9 @@ class Renderer(base.Renderer):
 
 
 class AddForm(base.NullAddForm):
-    form_fields = form.Fields(ICurrentPrayerCycle)
-    label = _(u"Add Current Prayer Cycle Portlet")
-    description = _(u"")
+    form_fields = form.Fields(IUpcomingPrayerCycle)
+    label = _(u"Add Upcoming Prayer Cycle Portlet")
+    description = _(u"Display upcoming prayer cycle")
 
     def create(self):
         return Assignment()

@@ -17,7 +17,7 @@ class Index(dexterity.DisplayForm):
         return ''
 
     def endDate(self):
-        endDate = getattr(self.context, 'startDate', None)
+        endDate = getattr(self.context, 'endDate', None)
         if endDate is not None:
             return endDate.strftime('%d %B %Y')
         return ''

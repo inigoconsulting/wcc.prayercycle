@@ -3,6 +3,11 @@
 
     <!-- -*- extra stuff goes here -*- -->
  <portlet 
+   addview="wcc.prayercycle.portlet.UpcomingPrayerCycle"
+   title="Upcoming Prayer Cycle"
+   description="Display upcoming prayer cycle"/>
+
+ <portlet 
    addview="wcc.prayercycle.portlet.CurrentPrayerCycle"
    title="Current Prayer Cycle"
    description=""/>
