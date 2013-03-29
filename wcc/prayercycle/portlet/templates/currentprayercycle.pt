@@ -6,7 +6,7 @@
     <dt class="portletHeader">
         <span class="portletTopLeft"></span>
         <a tal:attributes="href obj/absolute_url" style="font-weight:bold">
-            Current Prayer Cycle
+            Prayer Cycle
         </a>
         <span class="portletTopRight"></span>
     </dt>
