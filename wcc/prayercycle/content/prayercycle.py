@@ -19,7 +19,7 @@ from z3c.relationfield.schema import RelationList, RelationChoice
 from plone.formwidget.contenttree import ObjPathSourceBinder
 
 from wcc.prayercycle import MessageFactory as _
-
+from plone.multilingualbehavior.directives import languageindependent
 
 # Interface class; used to define content-type schema.
 
@@ -27,6 +27,17 @@ class IPrayerCycle(form.Schema, IImageScaleTraversable):
     """
     Prayer cycle content type
     """
-    pass
 
+    languageindependent('startDate')
+    startDate = schema.Datetime(
+        title=_(u"Start Date"),
+        description=u'',
+        required=True,
+    )
 
+    languageindependent('startDate')
+    endDate = schema.Datetime(
+        title=_(u"End Date"),
+        description=u'',
+        required=True,
+    )

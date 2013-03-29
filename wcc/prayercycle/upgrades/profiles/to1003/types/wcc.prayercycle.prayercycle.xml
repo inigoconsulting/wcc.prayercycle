@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<object name="wcc.prayercycle.prayercycle"
+   meta_type="Dexterity FTI"
+   i18n:domain="wcc.prayercycle" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+  <property name="behaviors">
+     <element value="plone.app.content.interfaces.INameFromTitle" />
+     <element value="plone.app.dexterity.behaviors.metadata.IDublinCore"/>
+      <element value="collective.dexteritytextindexer.behavior.IDexterityTextIndexer"/>
+      <element value="plone.multilingualbehavior.interfaces.IDexterityTranslatable"/>
+      <element value="collective.miscbehaviors.behavior.bodytext.IBodyText"/>
+      <element value="wcc.common.behavior.location.ILocationTags"/>
+      <element value="wcc.featurable.behavior.featurable.IFeaturable"/>
+   </property>
+</object>
