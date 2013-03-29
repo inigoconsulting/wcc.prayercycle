@@ -1,14 +1,14 @@
 <div class="portletCurrentPrayerCycle"
-    style="background:#DADDD2;width:200px;font-family:Arial, sans-serif"
+    style="width:200px;font-family:Arial, sans-serif;margin:0 auto;"
     tal:define="obj view/prayercycle"
     tal:condition="view/prayercycle"
     i18n:domain="wcc.prayercycle">
 
     <div>
-        <h3>Current Prayer Cycle</h3>
+        <h3>Prayer Cycle</h3>
     </div>
-    <div style="margin-bottom:10px">
-        <h4><span tal:content="view/startDate"/> - <span tal:content="view/endDate"/></h4>
+    <div style="margin-bottom:10px;font-size:10px">
+        <b><span tal:content="view/startDate"/> - <span tal:content="view/endDate"/></b>
     </div>
     <div>
         <h5><a tal:attributes="href obj/absolute_url" tal:content="obj/Title"></a></h5>
@@ -18,7 +18,7 @@
             tal:condition="obj/image"
             tal:replace="structure python:scales.scale('image', width=175, height=175).tag()"/>
     </div>
-    <div style="text-align:right">
+    <div style="text-align:right;margin-top:10px;font-size:10px">
         <a tal:attributes="href obj/absolute_url"><i>&raquo; View the prayers</i></a>
     </div>
 </div>

@@ -1,13 +1,27 @@
 from five import grok
 from DateTime import DateTime
 from Products.CMFCore.interfaces import ISiteRoot
+from plone.app.layout.navigation.interfaces import INavigationRoot
 
 grok.templatedir('templates')
 
+class PrayerCycleTYPO3Module(grok.View):
+    grok.name('currentprayercycle.xml')
+    grok.context(INavigationRoot)
+
+    def render(self):
+        self.request.response.setHeader('Content-Type', 'text/xml')
+        return '''<?xml version="1.0" encoding="utf-8" ?>
+        <Module>
+            <ModulePrefs title="Prayer cycle" />
+            <Content type="url" href="%s" />
+        </Module>''' % (self.context.absolute_url() +
+                        '/currentprayercycle.html')
+
 class CurrentPrayerCycleEmbedView(grok.View):
-    grok.name('currentprayercycle_embed')
+    grok.name('currentprayercycle.html')
     grok.template('currentprayercycle_embed')
-    grok.context(ISiteRoot)
+    grok.context(INavigationRoot)
 
     def prayercycle(self):
         # get current prayer cycle for date and context
