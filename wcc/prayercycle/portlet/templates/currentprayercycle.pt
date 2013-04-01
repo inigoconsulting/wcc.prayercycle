@@ -18,14 +18,15 @@
         <div>
             <h4><a tal:attributes="href obj/absolute_url" tal:content="obj/Title"></a></h4>
         </div>
-        <div>
-        <img tal:define="scales obj/@@images;"
-            tal:condition="obj/image"
-            tal:replace="structure python:scales.scale('image', width=175, height=175).tag()"/>
+        <div tal:condition="obj/image">
+            <a tal:attributes="href obj/absolute_url">
+                <img tal:define="scales obj/@@images;"
+                    tal:replace="structure python:scales.scale('image', width=175, height=175).tag()"/>
+            </a>
         </div>
     </dd>
 
-    <dd class="portletFooter" style="text-align:right">
+    <dd class="portletFooter">
         <span class="portletBottomLeft"></span>
         <a tal:attributes="href obj/absolute_url"><i>&raquo; View the prayers</i></a>
         <span class="portletBottomRight"></span>
