@@ -1,24 +1,31 @@
-<div class="portletCurrentPrayerCycle"
-    style="width:200px;font-family:Arial, sans-serif;margin:0 auto;"
-    tal:define="obj view/prayercycle"
+<html tal:define="obj view/prayercycle"
     tal:condition="view/prayercycle"
     i18n:domain="wcc.prayercycle">
 
-    <div>
-        <h3>Prayer Cycle</h3>
-    </div>
-    <div style="margin-bottom:10px;font-size:10px">
-        <b><span tal:content="view/startDate"/> - <span tal:content="view/endDate"/></b>
-    </div>
-    <div>
-        <h5><a tal:attributes="href obj/absolute_url" tal:content="obj/Title"></a></h5>
-    </div>
-    <div>
-        <img tal:define="scales obj/@@images;"
-            tal:condition="obj/image"
-            tal:replace="structure python:scales.scale('image', width=175, height=175).tag()"/>
-    </div>
-    <div style="text-align:right;margin-top:10px;font-size:10px">
-        <a tal:attributes="href obj/absolute_url"><i>&raquo; View the prayers</i></a>
-    </div>
-</div>
+    <head>
+        <link rel="stylesheet" tal:attributes="href string:${context/absolute_url}/++resource++wcc.prayercycle/embed.css"/>
+        <tal:style condition="request/css|nothing">
+            <link rel="stylesheet" tal:attributes="href request/css"/>
+        </tal:style>
+
+    </head>
+    <body>
+        <div class="portletCurrentPrayerCycle">
+
+            <div class="dates">
+                <h3><span tal:content="view/startDate"/> - <span tal:content="view/endDate"/></h3>
+            </div>
+            <div class="title">
+                <h2><a tal:attributes="href obj/absolute_url" tal:content="obj/Title"></a></h2>
+            </div>
+            <div>
+                <a tal:attributes="href obj/absolute_url">
+                <img tal:define="scales obj/@@images;"
+                    tal:condition="obj/image"
+                    tal:replace="structure python:scales.scale('image', width=132, height=100).tag()"/>
+                </a>
+            </div>
+            <a href="http://www.oikoumene.org" target="_blank" class="powered">Courtesy of the<br>World Council of Churches</a>
+        </div>
+    </body>
+</html>

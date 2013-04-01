@@ -19,6 +19,9 @@ class PrayerCycleTYPO3Module(grok.View):
                         '/currentprayercycle.html')
 
 class CurrentPrayerCycleEmbedView(grok.View):
+    # this should be published as 
+    # http://www.oikoumene.org/?id=3038&type=101
+    # it should also accept a 'css' parameter
     grok.name('currentprayercycle.html')
     grok.template('currentprayercycle_embed')
     grok.context(INavigationRoot)
@@ -52,4 +55,3 @@ class CurrentPrayerCycleEmbedView(grok.View):
         if endDate is not None:
             return endDate.strftime('%d %B %Y')
         return ''
-
