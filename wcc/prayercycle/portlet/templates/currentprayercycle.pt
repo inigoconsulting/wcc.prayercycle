@@ -5,7 +5,8 @@
 
     <dt class="portletHeader">
         <span class="portletTopLeft"></span>
-        <a tal:attributes="href obj/absolute_url" style="font-weight:bold">
+        <a tal:attributes="href obj/absolute_url" style="font-weight:bold"
+            i18n:translate="portlet_current_prayer_cycle_title">
             Prayer Cycle
         </a>
         <span class="portletTopRight"></span>
@@ -28,7 +29,8 @@
 
     <dd class="portletFooter">
         <span class="portletBottomLeft"></span>
-        <a tal:attributes="href obj/absolute_url"><i>&raquo; View the prayers</i></a>
+        <a tal:attributes="href obj/absolute_url"><i>&raquo; 
+                <span i18n:translate="portlet_view_prayers_link">View the prayers</span></i></a>
         <span class="portletBottomRight"></span>
     </dd>
 
