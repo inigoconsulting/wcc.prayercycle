@@ -13,7 +13,7 @@
 
     <dd class="portletItem">
         <div style="margin-bottom:10px">
-            <h3><span tal:content="view/startDate"/> - <span tal:content="view/endDate"/></h3>
+            <p><a><span tal:content="view/startDate"/> - <span tal:content="view/endDate"/></a></p>
         </div>
         <div>
             <h4><a tal:attributes="href obj/absolute_url" tal:content="obj/Title"></a></h4>
