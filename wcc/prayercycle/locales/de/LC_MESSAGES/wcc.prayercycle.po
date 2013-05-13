@@ -14,11 +14,11 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: ./portlet/currentprayercycle.py:73
+#: ./portlet/currentprayercycle.py:77
 msgid "Add Current Prayer Cycle Portlet"
 msgstr ""
 
-#: ./portlet/upcomingprayercycle.py:79
+#: ./portlet/upcomingprayercycle.py:83
 msgid "Add Upcoming Prayer Cycle Portlet"
 msgstr ""
 
@@ -26,7 +26,7 @@ msgstr ""
 msgid "Current Prayer Cycle"
 msgstr ""
 
-#: ./portlet/upcomingprayercycle.py:80
+#: ./portlet/upcomingprayercycle.py:84
 msgid "Display upcoming prayer cycle"
 msgstr ""
 
@@ -57,8 +57,14 @@ msgstr ""
 msgid "portlet_current_prayer_cycle_title"
 msgstr "Fürbittkalender"
 
+#. Default: "Next week we pray for:"
+#: ./portlet/templates/upcomingprayercycle.pt:8
+msgid "portlet_upcoming_prayer_cycle_title"
+msgstr "Gebete für nächste Woche:"
+
 #. Default: "View the prayers"
 #: ./portlet/templates/currentprayercycle.pt:33
+#: ./portlet/templates/upcomingprayercycle.pt:32
 msgid "portlet_view_prayers_link"
 msgstr "Zu den Gebeten"
 

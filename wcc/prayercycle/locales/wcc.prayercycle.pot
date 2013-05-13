@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-04-05 06:10+0000\n"
+"POT-Creation-Date: 2013-05-13 03:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,16 +18,16 @@ msgstr ""
 "Domain: wcc.prayercycle\n"
 
 #: ./__init__.py:24
-#: ./portlet/currentprayercycle.py:74
+#: ./portlet/currentprayercycle.py:78
 #: ./setuphandlers.py:7
 msgid ""
 msgstr ""
 
-#: ./portlet/currentprayercycle.py:73
+#: ./portlet/currentprayercycle.py:77
 msgid "Add Current Prayer Cycle Portlet"
 msgstr ""
 
-#: ./portlet/upcomingprayercycle.py:79
+#: ./portlet/upcomingprayercycle.py:83
 msgid "Add Upcoming Prayer Cycle Portlet"
 msgstr ""
 
@@ -35,7 +35,7 @@ msgstr ""
 msgid "Current Prayer Cycle"
 msgstr ""
 
-#: ./portlet/upcomingprayercycle.py:80
+#: ./portlet/upcomingprayercycle.py:84
 msgid "Display upcoming prayer cycle"
 msgstr ""
 
@@ -66,8 +66,14 @@ msgstr ""
 msgid "portlet_current_prayer_cycle_title"
 msgstr ""
 
+#. Default: "Next week we pray for:"
+#: ./portlet/templates/upcomingprayercycle.pt:8
+msgid "portlet_upcoming_prayer_cycle_title"
+msgstr ""
+
 #. Default: "View the prayers"
 #: ./portlet/templates/currentprayercycle.pt:33
+#: ./portlet/templates/upcomingprayercycle.pt:32
 msgid "portlet_view_prayers_link"
 msgstr ""
 
