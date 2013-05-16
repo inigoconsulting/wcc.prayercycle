@@ -6,6 +6,13 @@
     <include package="plone.app.portlets" file="permissions.zcml"/>
     <!-- -*- extra stuff goes here -*- -->
     <plone:portlet
+        name="wcc.prayercycle.portlet.PrayerCopyright"
+        interface=".prayercopyright.IPrayerCopyright"
+        assignment=".prayercopyright.Assignment"
+        renderer=".prayercopyright.Renderer"
+        addview=".prayercopyright.AddForm"
+        />
+    <plone:portlet
         name="wcc.prayercycle.portlet.UpcomingPrayerCycle"
         interface=".upcomingprayercycle.IUpcomingPrayerCycle"
         assignment=".upcomingprayercycle.Assignment"

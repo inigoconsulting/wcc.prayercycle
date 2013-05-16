@@ -14,15 +14,4 @@
     name="wcc.prayercycle.portlet.PrayerCopyright-wcc.prayercycle.prayercycle"
     type="wcc.prayercycle.portlet.PrayerCopyright"/>
 
- <portlet 
-   addview="wcc.prayercycle.portlet.UpcomingPrayerCycle"
-   title="Upcoming Prayer Cycle"
-   description="Display upcoming prayer cycle"/>
-
- <portlet 
-   addview="wcc.prayercycle.portlet.CurrentPrayerCycle"
-   title="Current Prayer Cycle"
-   description=""/>
-
-
 </portlets>
