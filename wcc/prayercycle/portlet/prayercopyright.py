@@ -11,6 +11,7 @@ from plone.app.portlets.cache import render_cachekey
 from Acquisition import aq_inner
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from wcc.prayercycle import MessageFactory as _
+from wcc.prayercycle.content.prayercycle import IPrayerCycle
 
 class IPrayerCopyright(IPortletDataProvider):
     """
@@ -31,7 +32,7 @@ class Renderer(base.Renderer):
 
     @property
     def available(self):
-        return True
+        return IPrayerCycle.providedBy(self.context)
 
 class AddForm(base.NullAddForm):
     form_fields = form.Fields(IPrayerCopyright)
