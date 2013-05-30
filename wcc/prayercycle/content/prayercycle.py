@@ -41,3 +41,12 @@ class IPrayerCycle(form.Schema, IImageScaleTraversable):
         description=u'',
         required=True,
     )
+
+    sources = schema.List(
+        title=_(u'Sources'),
+        description=_(u'Sources for this prayer cycle, one on each line'),
+        required=False,
+        value_type=schema.TextLine()
+    )
+
+
