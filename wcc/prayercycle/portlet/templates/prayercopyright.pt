@@ -3,11 +3,18 @@
 
     <dt class="portletHeader">
         <span class="portletTopLeft"></span>
-        Prayer Copyright
+        Sources
         <span class="portletTopRight"></span>
     </dt>
 
     <dd class="portletItem">
+            <p tal:repeat="source context/sources|nothing">
+                &copy; <span tal:replace="source"/>
+            </p>
+
+        <p tal:condition="context/imageCopyright|nothing">
+            Photo: <span tal:content="context/imageCopyright"/>
+        </p>
     </dd>
 
     <dd class="portletFooter">
