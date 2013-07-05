@@ -29,9 +29,9 @@
     <dd class="portletFooter" style="text-align:right">
         <span class="portletBottomLeft"></span>
         <a tal:attributes="href obj/absolute_url">
-            <span i18n:translate="portlet_view_prayers_link">
+            <i> &raquo; <span i18n:translate="portlet_view_prayers_link">
                 View the prayers
-            </span>
+        </span></i>
         </a>
         <span class="portletBottomRight"></span>
     </dd>
