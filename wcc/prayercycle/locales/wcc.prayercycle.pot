@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-05-13 03:04+0000\n"
+"POT-Creation-Date: 2013-12-18 14:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,17 +18,29 @@ msgstr ""
 "Domain: wcc.prayercycle\n"
 
 #: ./__init__.py:24
+#: ./portlet/countryportlet.py:48
 #: ./portlet/currentprayercycle.py:78
-#: ./setuphandlers.py:7
 msgid ""
+msgstr ""
+
+#: ./portlet/countryportlet.py:47
+msgid "Add Country portlet"
 msgstr ""
 
 #: ./portlet/currentprayercycle.py:77
 msgid "Add Current Prayer Cycle Portlet"
 msgstr ""
 
+#: ./portlet/prayercopyright.py:39
+msgid "Add Prayer Copyright"
+msgstr ""
+
 #: ./portlet/upcomingprayercycle.py:83
 msgid "Add Upcoming Prayer Cycle Portlet"
+msgstr ""
+
+#: ./portlet/countryportlet.py:28
+msgid "Country portlet"
 msgstr ""
 
 #: ./portlet/currentprayercycle.py:30
@@ -43,6 +55,14 @@ msgstr ""
 msgid "End Date"
 msgstr ""
 
+#: ./portlet/templates/countryportlet.pt:6
+msgid "More on churches in:"
+msgstr ""
+
+#: ./portlet/prayercopyright.py:27
+msgid "Prayer Copyright"
+msgstr ""
+
 #: ./profiles/default/types/wcc.prayercycle.prayercycle.xml
 #: ./upgrades/profiles/to1002/types/wcc.prayercycle.prayercycle.xml
 msgid "Prayer cycle content type"
@@ -51,6 +71,15 @@ msgstr ""
 #: ./profiles/default/types/wcc.prayercycle.prayercycle.xml
 #: ./upgrades/profiles/to1002/types/wcc.prayercycle.prayercycle.xml
 msgid "PrayerCycle"
+msgstr ""
+
+#: ./content/prayercycle.py:46
+#: ./portlet/templates/prayercopyright.pt:6
+msgid "Sources"
+msgstr ""
+
+#: ./content/prayercycle.py:47
+msgid "Sources for this prayer cycle, one on each line"
 msgstr ""
 
 #: ./content/prayercycle.py:33

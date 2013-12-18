@@ -14,12 +14,24 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
+#: ./portlet/countryportlet.py:47
+msgid "Add Country portlet"
+msgstr ""
+
 #: ./portlet/currentprayercycle.py:77
 msgid "Add Current Prayer Cycle Portlet"
 msgstr ""
 
+#: ./portlet/prayercopyright.py:39
+msgid "Add Prayer Copyright"
+msgstr ""
+
 #: ./portlet/upcomingprayercycle.py:83
 msgid "Add Upcoming Prayer Cycle Portlet"
+msgstr ""
+
+#: ./portlet/countryportlet.py:28
+msgid "Country portlet"
 msgstr ""
 
 #: ./portlet/currentprayercycle.py:30
@@ -34,6 +46,14 @@ msgstr ""
 msgid "End Date"
 msgstr ""
 
+#: ./portlet/templates/countryportlet.pt:6
+msgid "More on churches in:"
+msgstr "Mehr über Kirchen in:"
+
+#: ./portlet/prayercopyright.py:27
+msgid "Prayer Copyright"
+msgstr ""
+
 #: ./profiles/default/types/wcc.prayercycle.prayercycle.xml
 #: ./upgrades/profiles/to1002/types/wcc.prayercycle.prayercycle.xml
 msgid "Prayer cycle content type"
@@ -42,6 +62,15 @@ msgstr ""
 #: ./profiles/default/types/wcc.prayercycle.prayercycle.xml
 #: ./upgrades/profiles/to1002/types/wcc.prayercycle.prayercycle.xml
 msgid "PrayerCycle"
+msgstr ""
+
+#: ./content/prayercycle.py:46
+#: ./portlet/templates/prayercopyright.pt:6
+msgid "Sources"
+msgstr "Quellenangabe"
+
+#: ./content/prayercycle.py:47
+msgid "Sources for this prayer cycle, one on each line"
 msgstr ""
 
 #: ./content/prayercycle.py:33

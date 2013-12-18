@@ -1,0 +1,26 @@
+<dl class="portlet portletCountryportlet"
+    i18n:domain="wcc.prayercycle">
+
+    <dt class="portletHeader">
+        <span class="portletTopLeft"></span>
+        <span i18n:translate="">More on churches in:</span>
+        <span class="portletTopRight"></span>
+    </dt>
+
+    <dd class="portletItem">
+    <ul tal:repeat="country context/countries">
+        <li tal:define="country_brain python:view.get_country(country)"
+            tal:condition="country_brain">
+            <a tal:attributes="href country_brain/getURL"
+               tal:content="country_brain/Title"></a> 
+        
+        </li>
+    </ul>
+    </dd>
+
+    <dd class="portletFooter">
+        <span class="portletBottomLeft"></span>
+        <span class="portletBottomRight"></span>
+    </dd>
+
+</dl>

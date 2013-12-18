@@ -3,6 +3,18 @@
 
     <!-- -*- extra stuff goes here -*- -->
  <portlet 
+   addview="wcc.prayercycle.portlet.Countryportlet"
+   title="Country portlet"
+   description=""/>
+
+ <assignment
+    category="content_type"
+    key="wcc.prayercycle.prayercycle"
+    manager="plone.rightcolumn"
+    name="wcc.prayercycle.portlet.Countryportlet-wcc.prayercycle.prayercycle"
+    type="wcc.prayercycle.portlet.Countryportlet"/>
+
+ <portlet 
    addview="wcc.prayercycle.portlet.PrayerCopyright"
    title="Prayer Copyright"
    description=""/>

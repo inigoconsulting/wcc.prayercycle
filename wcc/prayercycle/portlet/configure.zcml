@@ -6,6 +6,13 @@
     <include package="plone.app.portlets" file="permissions.zcml"/>
     <!-- -*- extra stuff goes here -*- -->
     <plone:portlet
+        name="wcc.prayercycle.portlet.Countryportlet"
+        interface=".countryportlet.ICountryportlet"
+        assignment=".countryportlet.Assignment"
+        renderer=".countryportlet.Renderer"
+        addview=".countryportlet.AddForm"
+        />
+    <plone:portlet
         name="wcc.prayercycle.portlet.PrayerCopyright"
         interface=".prayercopyright.IPrayerCopyright"
         assignment=".prayercopyright.Assignment"

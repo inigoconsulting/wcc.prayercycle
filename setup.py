@@ -30,6 +30,7 @@ setup(name='wcc.prayercycle',
           'plone.namedfile [blobs]',
           'collective.grok',
           'collective.miscbehaviors',
+          'plone.api',
           # -*- Extra requirements: -*-
       ],
       extras_require={

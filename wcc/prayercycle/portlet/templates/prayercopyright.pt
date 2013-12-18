@@ -3,7 +3,7 @@
 
     <dt class="portletHeader">
         <span class="portletTopLeft"></span>
-        Sources
+        <span i18n:translate="">Sources</span>
         <span class="portletTopRight"></span>
     </dt>
 
