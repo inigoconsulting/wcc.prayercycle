@@ -35,7 +35,7 @@ class IPrayerCycle(form.Schema, IImageScaleTraversable):
         required=True,
     )
 
-    languageindependent('startDate')
+    languageindependent('endDate')
     endDate = schema.Datetime(
         title=_(u"End Date"),
         description=u'',

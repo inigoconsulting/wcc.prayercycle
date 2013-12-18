@@ -23,7 +23,6 @@
       <element value="collective.dexteritytextindexer.behavior.IDexterityTextIndexer"/>
       <element value="plone.multilingualbehavior.interfaces.IDexterityTranslatable"/>
       <element value="collective.miscbehaviors.behavior.bodytext.IBodyText"/>
-      <element value="collective.miscbehaviors.behavior.startenddate.IStartEndDate"/>
       <element value="wcc.common.behavior.location.ILocationTags"/>
       <element value="wcc.featurable.behavior.featurable.IFeaturable"/>
    </property>
