@@ -15,6 +15,9 @@
 
     <include package=".behavior"/>
     <include package=".portlet"/>
+    <adapter name="start" factory=".indexer.prayercycle_start" />
+    <adapter name="end" factory=".indexer.prayercycle_end" />
+
 
     <!-- -*- extra stuff goes here -*- -->
 
