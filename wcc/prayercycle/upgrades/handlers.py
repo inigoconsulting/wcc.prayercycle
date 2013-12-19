@@ -4,6 +4,21 @@ from Products.CMFCore.utils import getToolByName
 # -*- extra stuff goes here -*- 
 
 
+@gs.upgradestep(title=u'Upgrade wcc.prayercycle to 1005',
+                description=u'Upgrade wcc.prayercycle to 1005',
+                source='1004', destination='1005',
+                sortkey=1, profile='wcc.prayercycle:default')
+def to1005(context):
+    setup = getToolByName(context, 'portal_setup')
+    setup.runAllImportStepsFromProfile('profile-wcc.prayercycle.upgrades:to1005')
+
+    catalog = getToolByName(context, 'portal_catalog')
+    for brain in catalog(portal_type=['wcc.prayercycle.prayercycle'],
+            Language='all'):
+        obj = brain.getObject()
+        obj.reindexObject()
+
+
 @gs.upgradestep(title=u'Upgrade wcc.prayercycle to 1004',
                 description=u'Upgrade wcc.prayercycle to 1004',
                 source='1003', destination='1004',
