@@ -4,6 +4,15 @@ from Products.CMFCore.utils import getToolByName
 # -*- extra stuff goes here -*- 
 
 
+@gs.upgradestep(title=u'Upgrade wcc.prayercycle to 1007',
+                description=u'Upgrade wcc.prayercycle to 1007',
+                source='1006', destination='1007',
+                sortkey=1, profile='wcc.prayercycle:default')
+def to1007(context):
+    setup = getToolByName(context, 'portal_setup')
+    setup.runAllImportStepsFromProfile('profile-wcc.prayercycle.upgrades:to1007')
+
+
 @gs.upgradestep(title=u'Upgrade wcc.prayercycle to 1006',
                 description=u'Upgrade wcc.prayercycle to 1006',
                 source='1005', destination='1006',
