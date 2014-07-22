@@ -18,6 +18,7 @@
         assignment=".prayercopyright.Assignment"
         renderer=".prayercopyright.Renderer"
         addview=".prayercopyright.AddForm"
+        editview=".prayercopyright.EditForm"
         />
     <plone:portlet
         name="wcc.prayercycle.portlet.UpcomingPrayerCycle"

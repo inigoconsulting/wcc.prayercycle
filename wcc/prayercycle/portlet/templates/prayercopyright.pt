@@ -3,13 +3,13 @@
 
     <dt class="portletHeader">
         <span class="portletTopLeft"></span>
-        <span i18n:translate="">Sources</span>
+        <a tal:attributes="href view/data/source_link" i18n:translate="">Sources</a>
         <span class="portletTopRight"></span>
     </dt>
 
     <dd class="portletItem">
             <p tal:repeat="source context/sources|nothing">
-                &copy; <span tal:replace="source"/>
+                 <span tal:replace="source"/>
             </p>
 
         <p tal:condition="context/imageCopyright|nothing">
@@ -19,7 +19,11 @@
 
     <dd class="portletFooter">
         <span class="portletBottomLeft"></span>
-        <span class="portletBottomRight"></span>
+        <div class="prayercycle-copyright-text">The prayers on these pages can be printed for individual church services as long as they are
+not used for commercial purposes. For any other use, please refer to the copyright notice.</div>
+        <div class="portletBottomRight prayercycle-copyright">
+        <a tal:attributes="href view/data/source_link">Copyright details</a>
+        </div>
     </dd>
 
 </dl>

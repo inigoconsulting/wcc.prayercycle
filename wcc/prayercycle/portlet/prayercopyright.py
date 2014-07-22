@@ -17,10 +17,18 @@ class IPrayerCopyright(IPortletDataProvider):
     """
     Define your portlet schema here
     """
-    pass
+    source_link = schema.URI(
+        title=_(u'Source URL'),
+        description=_(u''),
+        required=True
+        )
 
 class Assignment(base.Assignment):
     implements(IPrayerCopyright)
+
+    def __init__(self, **kwargs):
+        for k, v in kwargs.items():
+            setattr(self, k, v)
 
     @property
     def title(self):
@@ -34,10 +42,17 @@ class Renderer(base.Renderer):
     def available(self):
         return IPrayerCycle.providedBy(self.context)
 
-class AddForm(base.NullAddForm):
+class AddForm(base.AddForm):
     form_fields = form.Fields(IPrayerCopyright)
     label = _(u"Add Prayer Copyright")
     description = _(u"")
 
-    def create(self):
-        return Assignment()
+    def create(self, data):
+        return Assignment(**data)
+
+
+class EditForm(base.EditForm):
+
+    form_fields = form.Fields(IPrayerCopyright)
+    label = _(u"Add Prayer Copyright")
+    description = _(u"")
