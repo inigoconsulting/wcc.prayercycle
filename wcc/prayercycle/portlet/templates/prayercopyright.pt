@@ -1,9 +1,11 @@
 <dl class="portlet portletPrayerCopyright"
     i18n:domain="wcc.prayercycle">
+    <tal:language define="lang python:context.restrictedTraverse('@@plone_portal_state').language(); lang string:/${lang}/">
 
     <dt class="portletHeader">
         <span class="portletTopLeft"></span>
-        <a tal:attributes="href view/data/source_link" i18n:translate="">Sources</a>
+
+        <a tal:attributes="href python: view.data.source_link.replace('/en/', lang)" i18n:translate="">Sources</a>
         <span class="portletTopRight"></span>
     </dt>
 
@@ -22,8 +24,8 @@
         <div i18n:translate="" class="prayercycle-copyright-text">The prayers on these pages can be printed for individual church services as long as they are
 not used for commercial purposes. For any other use, please refer to the copyright notice.</div>
         <div class="portletBottomRight prayercycle-copyright">
-        <a i18n:translate="" tal:attributes="href view/data/source_link">Copyright details</a>
+        <a i18n:translate="" tal:attributes="href python: view.data.source_link.replace('/en/', lang)">Copyright details</a>
         </div>
     </dd>
-
+    </tal:language>
 </dl>
