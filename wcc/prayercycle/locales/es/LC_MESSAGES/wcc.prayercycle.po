@@ -14,7 +14,7 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: ./portlet/countryportlet.py:47
+#: ./portlet/countryportlet.py:46
 msgid "Add Country portlet"
 msgstr ""
 
@@ -22,7 +22,7 @@ msgstr ""
 msgid "Add Current Prayer Cycle Portlet"
 msgstr ""
 
-#: ./portlet/prayercopyright.py:39
+#: ./portlet/prayercopyright.py:47
 msgid "Add Prayer Copyright"
 msgstr ""
 
@@ -30,7 +30,11 @@ msgstr ""
 msgid "Add Upcoming Prayer Cycle Portlet"
 msgstr ""
 
-#: ./portlet/countryportlet.py:28
+#: ./portlet/templates/prayercopyright.pt:25
+msgid "Copyright details"
+msgstr "Detalles de copyright"
+
+#: ./portlet/countryportlet.py:27
 msgid "Country portlet"
 msgstr ""
 
@@ -50,7 +54,7 @@ msgstr ""
 msgid "More on churches in:"
 msgstr "Más sobre las iglesias en:"
 
-#: ./portlet/prayercopyright.py:27
+#: ./portlet/prayercopyright.py:35
 msgid "Prayer Copyright"
 msgstr ""
 
@@ -62,6 +66,10 @@ msgstr ""
 #: ./profiles/default/types/wcc.prayercycle.prayercycle.xml
 #: ./upgrades/profiles/to1002/types/wcc.prayercycle.prayercycle.xml
 msgid "PrayerCycle"
+msgstr ""
+
+#: ./portlet/prayercopyright.py:21
+msgid "Source URL"
 msgstr ""
 
 #: ./content/prayercycle.py:46
@@ -76,6 +84,10 @@ msgstr ""
 #: ./content/prayercycle.py:33
 msgid "Start Date"
 msgstr ""
+
+#: ./portlet/templates/prayercopyright.pt:22
+msgid "The prayers on these pages can be printed for individual church services as long as they are not used for commercial purposes. For any other use, please refer to the copyright notice."
+msgstr "Las oraciones en estas páginas se pueden imprimir para los servicios religiosos individuales, siempre y cuando no se utilicen con fines comerciales. Para otros usos, por favor vea la nota sobre derechos de autor."
 
 #: ./portlet/upcomingprayercycle.py:27
 msgid "Upcoming Prayer Cycle"

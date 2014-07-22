@@ -19,10 +19,10 @@
 
     <dd class="portletFooter">
         <span class="portletBottomLeft"></span>
-        <div class="prayercycle-copyright-text">The prayers on these pages can be printed for individual church services as long as they are
+        <div i18n:translate="" class="prayercycle-copyright-text">The prayers on these pages can be printed for individual church services as long as they are
 not used for commercial purposes. For any other use, please refer to the copyright notice.</div>
         <div class="portletBottomRight prayercycle-copyright">
-        <a tal:attributes="href view/data/source_link">Copyright details</a>
+        <a i18n:translate="" tal:attributes="href view/data/source_link">Copyright details</a>
         </div>
     </dd>
 
