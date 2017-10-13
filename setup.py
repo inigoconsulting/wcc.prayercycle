@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.20'
+version = '1.19'
 
 setup(name='wcc.prayercycle',
       version=version,
