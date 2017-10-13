@@ -1,10 +1,10 @@
 Changelog
 =========
 
-1.19 (unreleased)
+1.19 (2017-10-13)
 -----------------
 
-- Nothing changed yet.
+- change prayer cycle view to show month and year in start date only if month and year is different from end date
 
 
 1.18 (2014-07-22)
