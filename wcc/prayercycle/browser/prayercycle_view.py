@@ -12,8 +12,20 @@ class Index(dexterity.DisplayForm):
 
     def startDate(self):
         startDate = getattr(self.context, 'startDate', None)
-        if startDate is not None:
-            return startDate.strftime('%d %B %Y')
+        endDate = getattr(self.context, 'endDate', None)
+
+        if startDate and endDate is not None:
+            startYear = startDate.strftime('%Y')
+            startMonth = startDate.strftime('%B')
+            endYear = endDate.strftime('%Y')
+            endMonth = endDate.strftime('%B')
+
+            if (startMonth == endMonth) and (startYear == endYear):
+                return startDate.strftime('%d')
+            elif (startMonth != endMonth) and (startYear == endYear):
+                return startDate.strftime('%d %B')
+            else:
+                return startDate.strftime('%d %B %Y')
         return ''
 
     def endDate(self):
