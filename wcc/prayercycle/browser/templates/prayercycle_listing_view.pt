@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="ilo.goodpractice"
+      metal:use-macro="context/main_template/macros/master">
+<head>
+</head>
+<body>
+    <div metal:fill-slot="content-core"
+         tal:define="b_start python:request.get('b_start', 0);
+                     batch python:context.results(b_start=b_start);
+                     toLocalizedTime nocall: context/@@plone/toLocalizedTime;">
+        
+        <p class="discreet"
+           tal:condition="not: batch"
+           i18n:translate="description_no_items_in_folder">
+            There are currently no items in this folder.
+        </p>
+        
+        <tal:listing tal:condition="batch">
+            <table class="listing collection-listing" summary="Content listing"
+                   i18n:attributes="summary"
+                   tal:define="fields here/getCustomViewFields;
+                          pas_member context/@@pas_member;
+                          site_properties context/portal_properties/site_properties;
+                          use_view_action site_properties/typesUseViewActionInListings|python:();">
+                
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Date Period</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tal:block tal:repeat="obj batch">
+                        <tr>
+                            <td><a tal:attributes="href obj/getURL" tal:content="obj/title"></a></td>
+                            <td tal:define="item_type obj/portal_type;
+                                            item_start obj/start|nothing;
+                                            item_end obj/end|nothing;
+                                            item_samedate python: True if item_type == 'wcc.prayercycle.prayercycle' and item_start == item_end else False;
+                                            item_samemonth python: item_start.month == item_end.month;
+                                            item_sameyear python: item_start.year == item_end.year">
+                                
+                                <div>
+                                        <span tal:condition="python: item_type == 'wcc.prayercycle.prayercycle' and item_samedate"
+                                              i18n:translate="label_event_byline_onlyfrom">
+                                             <abbr class="dtstart"
+                                                   tal:content="python:toLocalizedTime(item_start)"
+                                                   i18n:name="start">date</abbr>
+                                        </span>
+                                        <span tal:condition="python: item_type == 'wcc.prayercycle.prayercycle' and item_samemonth and not item_samedate and item_sameyear"
+                                              i18n:translate="label_event_byline_onlyfrom">
+                                             <abbr class="dtstart"
+                                                   tal:content="python: toLocalizedTime(item_start).split()[0]"
+                                                   i18n:name="start">date</abbr>
+                                            -
+                                            <abbr class="dtend"
+                                                   tal:content="python: toLocalizedTime(item_end)"
+                                                   i18n:name="end">date</abbr>
+                
+                                        </span>
+                                        <span tal:condition="python: item_type == 'wcc.prayercycle.prayercycle' and not item_samemonth and not item_samedate and item_sameyear"
+                                              i18n:translate="label_event_byline_onlyfrom">
+                                             <abbr class="dtstart"
+                                                   tal:content="python: ' '.join(toLocalizedTime(item_start).split()[0:-1])"
+                                                   i18n:name="start">date</abbr>
+                                            -
+                                            <abbr class="dtend"
+                                                   tal:content="python: toLocalizedTime(item_end)"
+                                                   i18n:name="end">date</abbr>
+                
+                                        </span>
+                                        <span tal:condition="python: item_type == 'wcc.prayercycle.prayercycle' and not item_sameyear"
+                                              i18n:translate="label_event_byline_onlyfrom">
+                                             <abbr class="dtstart"
+                                                   tal:content="python:toLocalizedTime(item_start)"
+                                                   i18n:name="start">date</abbr>
+                                            -
+                                            <abbr class="dtend"
+                                                   tal:content="python: toLocalizedTime(item_end)"
+                                                   i18n:name="end">date</abbr>
+                
+                                        </span>
+                
+                
+                                    </div>
+                            </td>
+                        </tr>
+                    </tal:block>
+                </tbody>
+            </table>
+            <div metal:use-macro="context/batch_macros/macros/navigation" />
+        </tal:listing>
+        
+    </div>
+</body>
+</html>
