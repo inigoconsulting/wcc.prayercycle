@@ -10,26 +10,17 @@ class Index(dexterity.DisplayForm):
     grok.template('prayercycle_view')
     grok.name('view')
 
+
     def startDate(self):
-        startDate = getattr(self.context, 'startDate', None)
-        endDate = getattr(self.context, 'endDate', None)
-
-        if startDate and endDate is not None:
-            startYear = startDate.strftime('%Y')
-            startMonth = startDate.strftime('%B')
-            endYear = endDate.strftime('%Y')
-            endMonth = endDate.strftime('%B')
-
-            if (startMonth == endMonth) and (startYear == endYear):
-                return startDate.strftime('%d')
-            elif (startMonth != endMonth) and (startYear == endYear):
-                return startDate.strftime('%d %B')
-            else:
-                return startDate.strftime('%d %B %Y')
+        context=self.context
+        startDate = getattr(context, 'startDate', None)
+        if startDate is not None:
+            return startDate
         return ''
 
     def endDate(self):
-        endDate = getattr(self.context, 'endDate', None)
+        context=self.context
+        endDate = getattr(context, 'endDate', None)
         if endDate is not None:
-            return endDate.strftime('%d %B %Y')
+            return endDate
         return ''

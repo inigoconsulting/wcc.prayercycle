@@ -9,18 +9,55 @@
 
 <metal:main fill-slot="content-core">
   <metal:content-core define-macro="content-core">
+      <h3 id="prayercycle-date"
+        tal:define="toLocalizedTime nocall: context/@@plone/toLocalizedTime;
+	item_start view/startDate|nothing;
+        item_end view/endDate|nothing;
+        start_month item_start/month;
+        end_month item_end/month;
+        start_year item_start/year;
+        end_year item_end/year;
+        item_samedate python: True if item_start == item_end else False;
+        item_samemonth python: start_month == end_month;
+        item_sameyear python: start_year == end_year;
+        item_lang context/@@plone_portal_state/language;
+	">
 
-      <h3 id="prayercycle-date">
-          <tal:block 
-              replace="view/startDate"/>
-          -
-          <tal:block replace="view/endDate"/>
+          <span tal:condition="python: item_samedate">
+            <span tal:content="python:toLocalizedTime(item_start)">date</span>
+          </span>
+                              
+          <span tal:condition="python: item_samemonth and not item_samedate and item_sameyear">
+            <span tal:content="python: toLocalizedTime(item_start).split()[0]">date</span>
+            -
+            <span tal:content="python: toLocalizedTime(item_end)">date</span>
+          </span>
+                              
+          <span tal:condition="python: not item_samemonth and not item_samedate and item_sameyear">
+            <span tal:condition="python: item_lang != 'es'"
+              tal:content="python: ' '.join(toLocalizedTime(item_start).split()[0:-1])">
+              date
+            </span>
+
+            <span tal:condition="python: item_lang == 'es'"
+              tal:content="python: ' '.join(toLocalizedTime(item_start).split()[0:-2])">
+              date
+            </span>
+            -
+            <span tal:content="python: toLocalizedTime(item_end)">date</span>
+          </span>
+                              
+          <span tal:condition="python: not item_sameyear">
+            <span tal:content="python:toLocalizedTime(item_start)">date</span>
+              -
+            <span tal:content="python: toLocalizedTime(item_end)">date</span>
+          </span>
+
       </h3>
 
       <div id="prayercycle-bodytext" 
           tal:content="structure view/w/IBodyText.text/render">
       </div>
-
   </metal:content-core>
 </metal:main>
 
