@@ -62,19 +62,19 @@ class Renderer(base.Renderer):
     def startDate(self):
         prayercycle = self.prayercycle()
         startDate = getattr(prayercycle, 'startDate', None)
-        ploneTool = self.context.unrestrictedTraverse('@@plone')
-        toLocalizedTime = ploneTool.toLocalizedTime
+        #ploneTool = self.context.unrestrictedTraverse('@@plone')
+        #toLocalizedTime = ploneTool.toLocalizedTime
         if startDate is not None:
-            return toLocalizedTime(startDate)
+            return startDate
         return ''
 
     def endDate(self):
         prayercycle = self.prayercycle()
         endDate = getattr(prayercycle, 'endDate', None)
-        ploneTool = self.context.unrestrictedTraverse('@@plone')
-        toLocalizedTime = ploneTool.toLocalizedTime
+        #ploneTool = self.context.unrestrictedTraverse('@@plone')
+        #toLocalizedTime = ploneTool.toLocalizedTime
         if endDate is not None:
-            return toLocalizedTime(endDate)
+            return endDate
         return ''
 
 
