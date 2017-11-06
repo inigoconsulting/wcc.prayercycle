@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.20.2 (unreleased)
+1.20.2 (2017-11-06)
 -------------------
 
 - format dates in portlets
